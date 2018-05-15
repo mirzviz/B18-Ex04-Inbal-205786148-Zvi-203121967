@@ -4,7 +4,9 @@ using System.Text;
 
 namespace Ex04.Menus.Delegates
 {
-    public class Class1
+    class MenuItem : AbstractMenu
     {
+
+        private List<AbstractMenu> m_SubMenusList;
     }
 }
