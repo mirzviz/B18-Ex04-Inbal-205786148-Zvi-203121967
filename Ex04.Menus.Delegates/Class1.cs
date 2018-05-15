@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Ex04.Menus.Test
+namespace Ex04.Menus.Delegates
 {
-    public class Program
+    public class Class1
     {
-
     }
 }
