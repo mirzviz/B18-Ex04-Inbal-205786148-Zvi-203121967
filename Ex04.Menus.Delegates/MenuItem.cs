@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Ex04.Menus.Delegates
 {
-    class MenuItem : AbstractMenu
+    public class MenuItem : AbstractMenu
     {
         private List<AbstractMenu> m_SubMenusList;
 
@@ -34,7 +34,27 @@ namespace Ex04.Menus.Delegates
         private void showMenu()
         {
             Console.WriteLine("Level: {0}", m_Level);
+            Console.WriteLine("Menu name: {0}", MenuName);
+            Console.WriteLine("---------------------------");
+            Console.WriteLine("0) back/exit");
+            for(int i = 1; i <= m_SubMenusList.Capacity; i++)
+            {
+                Console.WriteLine("{0}) {1}", i, m_SubMenusList[i - 1]);
+            }
 
+            Console.WriteLine("---------------------------");
+            Console.WriteLine("Please enter your choice:");
+        }
+
+        private int getUsersChoice()
+        {
+            int choice;
+            while(!int.TryParse(Console.ReadLine(), out choice))
+            {
+                Console.WriteLine("Invalid input, please try again.");
+            }
+
+            return choice;
         }
     }
 }

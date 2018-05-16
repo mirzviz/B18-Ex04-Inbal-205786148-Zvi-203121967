@@ -21,11 +21,6 @@ namespace Ex04.Menus.Delegates
         }
 
         public abstract void RunMenu();
-
-        
-        
-
-
     }
 
 
