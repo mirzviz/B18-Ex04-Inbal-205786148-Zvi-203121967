@@ -20,7 +20,7 @@ namespace Ex04.Menus.Delegates
             }
         }
 
-        public abstract void DoWhenChosen(int i_Level);
+        public abstract void RunMenu();
 
         
         
