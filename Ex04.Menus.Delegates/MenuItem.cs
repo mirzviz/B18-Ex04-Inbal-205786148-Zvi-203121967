@@ -12,34 +12,41 @@ namespace Ex04.Menus.Delegates
 
         public MenuItem(string i_Name, int i_Level)
         {
+            m_SubMenusList = new List<AbstractMenu>();
             MenuName = i_Name;
             m_Level = i_Level;
         }
 
         public void AddSubMenu(AbstractMenu i_SubMenuToAdd)
         {
-            m_SubMenusList[m_SubMenusList.Count] = i_SubMenuToAdd;
+            if (i_SubMenuToAdd != null)
+            {
+                m_SubMenusList.Add(i_SubMenuToAdd);
+            }
         }
 
         public override void RunMenu()
         {
             showMenu();
             int UsersChoice = getUsersChoice();
-            while(UsersChoice != 0 || m_Level != 1) 
+            while(UsersChoice != 0) 
             {
                 m_SubMenusList[UsersChoice - 1].RunMenu();
+                showMenu();
+                UsersChoice = getUsersChoice();
             }
         }
 
         private void showMenu()
         {
+            Console.Clear();
             Console.WriteLine("Level: {0}", m_Level);
             Console.WriteLine("Menu name: {0}", MenuName);
             Console.WriteLine("---------------------------");
             Console.WriteLine("0) back/exit");
-            for(int i = 1; i <= m_SubMenusList.Capacity; i++)
+            for(int i = 1; i <= m_SubMenusList.Count; i++)
             {
-                Console.WriteLine("{0}) {1}", i, m_SubMenusList[i - 1]);
+                Console.WriteLine("{0}) {1}", i, m_SubMenusList[i - 1].MenuName);
             }
 
             Console.WriteLine("---------------------------");

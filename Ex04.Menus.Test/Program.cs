@@ -7,7 +7,13 @@ namespace Ex04.Menus.Test
 {
     public class Program
     {
-        MenuItem bol = new MenuItem("Main Menu", 1);
+        public static void Main()
+        { 
+            MenuItem mainMenu = new MenuItem("Main Menu", 1);
+            MenuItem subMenu = new MenuItem("a sub menu", 2);
+            mainMenu.AddSubMenu(subMenu);
+            mainMenu.RunMenu();
+        }
         
     }
 }
