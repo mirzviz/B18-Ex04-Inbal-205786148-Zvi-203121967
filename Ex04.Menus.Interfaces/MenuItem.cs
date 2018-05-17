@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Ex04.Menus.Delegates
+namespace Ex04.Menus.Interfaces
 {
     public class MenuItem : AbstractMenu
     {
@@ -29,7 +29,7 @@ namespace Ex04.Menus.Delegates
         {
             showMenu();
             int UsersChoice = getUsersChoice();
-            while(UsersChoice != 0) 
+            while (UsersChoice != 0)
             {
                 m_SubMenusList[UsersChoice - 1].RunMenu();
                 showMenu();
@@ -44,7 +44,7 @@ namespace Ex04.Menus.Delegates
             Console.WriteLine("Menu name: {0}", MenuName);
             Console.WriteLine("---------------------------");
             Console.WriteLine("0) back/exit");
-            for(int i = 1; i <= m_SubMenusList.Count; i++)
+            for (int i = 1; i <= m_SubMenusList.Count; i++)
             {
                 Console.WriteLine("{0}) {1}", i, m_SubMenusList[i - 1].MenuName);
             }
@@ -56,7 +56,7 @@ namespace Ex04.Menus.Delegates
         private int getUsersChoice()
         {
             int choice;
-            while(!int.TryParse(Console.ReadLine(), out choice) || choice > m_SubMenusList.Count)
+            while (!int.TryParse(Console.ReadLine(), out choice) || choice > m_SubMenusList.Count)
             {
                 Console.WriteLine("Invalid input, please try again.");
             }
