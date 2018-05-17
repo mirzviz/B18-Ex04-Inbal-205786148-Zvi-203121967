@@ -8,7 +8,8 @@ namespace Ex04.Menus.Interfaces
 
     public class ActionMenu : AbstractMenu
     {
-        ActionInterface m_Action;
+        private ActionInterface m_Action;
+
         public ActionMenu(string i_Name, ActionInterface i_Action)
         {
             MenuName = i_Name;

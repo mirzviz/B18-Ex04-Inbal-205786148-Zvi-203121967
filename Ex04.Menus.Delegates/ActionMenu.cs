@@ -8,7 +8,8 @@ namespace Ex04.Menus.Delegates
 
     public class ActionMenu : AbstractMenu
     {
-        MethodHolder m_MethodHolderPtr;
+        private MethodHolder m_MethodHolderPtr;
+
         public ActionMenu(string i_Name, MethodHolder i_MethodHolderPtr)
         {
             MenuName = i_Name;
